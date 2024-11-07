@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-08 03:39+0700\n"
+"PO-Revision-Date: 2024-11-08 03:42+0000\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: .\app_test\templates\index.html:54
+msgid "Hello World 1 from html"
+msgstr "សួស្តី ពិភពលោក ពី HTML1"
+
+#: .\app_test\templates\index.html:55
+msgid "Hello World 2 from html"
+msgstr "សួស្តី ពិភពលោក ពី HTML2"
+
+#: .\app_test\templates\index.html:56
+msgid "Hello World 3 from html"
+msgstr "សួស្តី ពិភពលោក ពី HTML3"
+
+#: .\app_test\views.py:11
+msgid "Welcome to our website! from view.py"
+msgstr "សូមស្វាគមន៍មកកាន់គេហទំព័ររបស់យើង! ពី view.py"
+
+#: .\app_test\views.py:12
+msgid "Please enjoy browsing our products. from view.py"
+msgstr "សូមរីករាយក្នុងការទស្សនាផលិតផលរបស់យើង។ ពី view.py"
+
+#: .\django_i18n\settings.py:136
+msgid "English"
+msgstr "ភាសាអង់គ្លេស"
+
+#: .\django_i18n\settings.py:137
+msgid "Thai"
+msgstr "ថៃ"
+
+#: .\django_i18n\settings.py:138
+msgid "Khmer"
+msgstr "ខ្មែរ"
+
+#: .\django_i18n\settings.py:139
+msgid "German"
+msgstr "អាឡឺម៉ង់"
+
+#: .\django_i18n\settings.py:140
+msgid "Russian"
+msgstr "រុស្ស៊ី"

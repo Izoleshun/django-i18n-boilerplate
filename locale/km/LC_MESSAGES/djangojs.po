@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-08 03:39+0700\n"
+"PO-Revision-Date: 2024-11-07 22:07+0000\n"
+"Last-Translator:   <>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: .\django_i18n\static\js\script.js:4
+msgid "This is text1 from script.js"
+msgstr "នេះគឺជាអត្ថបទ 1 ពី script.js"
+
+#: .\django_i18n\static\js\script.js:5
+msgid "This is text2 from script.js"
+msgstr "នេះគឺជាអត្ថបទ 2 ពី script.js"
+
+#: .\django_i18n\static\js\script.js:6
+msgid "This is text3 from script.js"
+msgstr "នេះគឺជាអត្ថបទ 3 ពី script.js"
+
+#: .\django_i18n\static\js\script.js:7
+msgid "This is text4 from script.js"
+msgstr "នេះគឺជាអត្ថបទ 4 ពី script.js"
+
+#: .\django_i18n\static\js\script.js:8
+msgid "This is text5 from script.js"
+msgstr "នេះគឺជាអត្ថបទ 5 ពី script.js"
+
+#: .\django_i18n\static\js\script.js:9
+msgid "This is text6 from script.js"
+msgstr "នេះគឺជាអត្ថបទ 6 ពី script.js"
