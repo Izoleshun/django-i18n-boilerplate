@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" href="{% static 'images/favicon.ico' %}?version={{ app_version }}" type="image/x-icon">
+
     <link rel="stylesheet" href="{% static 'css/languageswitcher.css' %}?version={{ app_version }}">
 
     <script src="{% static 'js/jquery-3.6.0.min.js' %}?version={{ app_version }}"></script>
@@ -43,7 +45,7 @@
                             }{% if not forloop.last %},{% endif %}
                         {% endfor %}
                     ]'
-                data-current-language="{{ CURRENT_LANGUAGE }}">
+                data-current-language="{{ CURRENT_LANGUAGE }}"
             </ul>
         </div>
     </div>
