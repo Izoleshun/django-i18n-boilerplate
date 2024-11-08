@@ -10,13 +10,15 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}?version={{ app_version }}" type="image/x-icon">
 
     <link rel="stylesheet" href="{% static 'css/languageswitcher.css' %}?version={{ app_version }}">
+    <link rel="stylesheet" href="{% static 'css/datatables.min.css' %}?version={{ app_version }}">
+    <link rel="stylesheet" href="{% static 'css/custom_table.css' %}?version={{ app_version }}">
 
     <script src="{% static 'js/jquery-3.6.0.min.js' %}?version={{ app_version }}"></script>
-
     <script src="{% static 'js/i18n/'|add:CURRENT_LANGUAGE|add:'/djangojs.js' %}?version={{ app_version }}"></script>
+    <script src="{% static 'js/dataTables.min.js' %}?version={{ app_version }}"></script>
 
     <script src="{% static 'js/script.js' %}?version={{ app_version }}"></script>
-    <title>Django i18n | Language switcher</title>
+    <title>{% trans "Django i18n" %} | {% trans "Language switcher" %}</title>
 </head>
 <body>
     {% get_language_info for CURRENT_LANGUAGE as current_lang_info %}
@@ -28,42 +30,64 @@
         data-csrf="{{ csrf_token }}"
     ></div>
 
-    <div class="lang-switcher-container">
-        <div class="div_dropdown_lang" id="dropdown_lang" tab-index="0">
-            <ul
-                class="list_dropdown_lang hidden"
-                id="list_dropdown_lang"
-                role="menu"
-                data-languages='
-                    [
-                        {% for language in languages %}
-                            {
-                                "code": "{{ language.code }}",
-                                "name_local": "{{ language.name_local }}",
-                                "name_translated": "{{ language.name_translated }}",
-                                "flag_url": "{% static 'images/flags/'|add:language.code|add:'.png' %}?version={{ app_version }}"
-                            }{% if not forloop.last %},{% endif %}
-                        {% endfor %}
-                    ]'
-                data-current-language="{{ CURRENT_LANGUAGE }}"
-            </ul>
+    <div class="container">
+        <div class="lang-switcher-container">
+            <div class="div_dropdown_lang" id="dropdown_lang" tab-index="0">
+                <ul
+                    class="list_dropdown_lang hidden"
+                    id="list_dropdown_lang"
+                    role="menu"
+                    data-languages='
+                        [
+                            {% for language in languages %}
+                                {
+                                    "code": "{{ language.code }}",
+                                    "name_local": "{{ language.name_local }}",
+                                    "name_translated": "{{ language.name_translated }}",
+                                    "flag_url": "{% static 'images/flags/'|add:language.code|add:'.png' %}?version={{ app_version }}"
+                                }{% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        ]'
+                    data-current-language="{{ CURRENT_LANGUAGE }}"
+                </ul>
+            </div>
         </div>
-    </div>
+        <div class="text-content-container">
+            <h1 data-text="greeting">{{ greeting }}</h1>
+            <h2>{% trans "Hello World 1 from html" %}</h1>
+            <div data-text-id="test_1"></div>
+            <!--
+            <div data-text-id="test_3"></div>
+            <div data-text-id="test_4"></div>
+            <div data-text-id="test_5"></div>
+            <div data-text-id="test_6"></div>
+            -->
+        </div>
 
-    <div class="text-content-container">
-        <h1 data-text="greeting">{{ greeting }}</h1>
-        <p data-text="instructions">{{ instructions }}</p>
-
-        <h2>{% trans "Hello World 1 from html" %}</h1>
-        <h3>{% trans "Hello World 2 from html" %}</h1>
-        <h4>{% trans "Hello World 3 from html" %}</h1>
-
-        <div data-text-id="test_1"></div>
-        <div data-text-id="test_2"></div>
-        <div data-text-id="test_3"></div>
-        <div data-text-id="test_4"></div>
-        <div data-text-id="test_5"></div>
-        <div data-text-id="test_6"></div>
+        <div class="table-container">
+            <table id="table_test">
+                <thead>
+                    <tr>
+                        {% for header in test_data.headers %}
+                            <th>{{ header }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for record in test_data.data %}
+                        <tr>
+                            <td>{{ record.id }}</td>
+                            <td>{{ record.name }}</td>
+                            <td>{{ record.age }}</td>
+                            <td>{{ record.email }}</td>
+                            <td>{{ record.phone }}</td>
+                            <td>{{ record.address }}</td>
+                            <td>{{ record.description }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

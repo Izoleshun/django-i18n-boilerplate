@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 03:39+0700\n"
-"PO-Revision-Date: 2024-11-08 03:42+0000\n"
+"POT-Creation-Date: 2024-11-09 02:06+0700\n"
+"PO-Revision-Date: 2024-11-09 02:09+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,42 +19,70 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
-#: .\app_test\templates\index.html:54
+#: .\app_test\templates\index.html:21
+msgid "Django i18n"
+msgstr "ការប្រសើរផ្នែកភាសាជាតិរបស់ Django"
+
+#: .\app_test\templates\index.html:21
+msgid "Language switcher"
+msgstr "សម្រួលភាសា"
+
+#: .\app_test\templates\index.html:58
 msgid "Hello World 1 from html"
 msgstr "សួស្តី ពិភពលោក ពី HTML1"
 
-#: .\app_test\templates\index.html:55
-msgid "Hello World 2 from html"
-msgstr "សួស្តី ពិភពលោក ពី HTML2"
+#: .\app_test\views.py:16
+msgid "id"
+msgstr "លេខសម្គាល់"
 
-#: .\app_test\templates\index.html:56
-msgid "Hello World 3 from html"
-msgstr "សួស្តី ពិភពលោក ពី HTML3"
+#: .\app_test\views.py:16
+msgid "name"
+msgstr "ឈ្មោះ"
 
-#: .\app_test\views.py:11
+#: .\app_test\views.py:16
+msgid "age"
+msgstr "អាយុ"
+
+#: .\app_test\views.py:16
+msgid "email"
+msgstr "អ៊ីមែល"
+
+#: .\app_test\views.py:16
+msgid "phone"
+msgstr "ទូរស័ព្ទ"
+
+#: .\app_test\views.py:16
+msgid "address"
+msgstr "អាសយដ្ឋាន"
+
+#: .\app_test\views.py:16
+msgid "description"
+msgstr "ការពិពណ៌នា"
+
+#: .\app_test\views.py:18
 msgid "Welcome to our website! from view.py"
 msgstr "សូមស្វាគមន៍មកកាន់គេហទំព័ររបស់យើង! ពី view.py"
 
-#: .\app_test\views.py:12
+#: .\app_test\views.py:19
 msgid "Please enjoy browsing our products. from view.py"
 msgstr "សូមរីករាយក្នុងការទស្សនាផលិតផលរបស់យើង។ ពី view.py"
 
-#: .\django_i18n\settings.py:136
+#: .\django_i18n\settings.py:142
 msgid "English"
 msgstr "ភាសាអង់គ្លេស"
 
-#: .\django_i18n\settings.py:137
+#: .\django_i18n\settings.py:143
 msgid "Thai"
 msgstr "ថៃ"
 
-#: .\django_i18n\settings.py:138
+#: .\django_i18n\settings.py:144
 msgid "Khmer"
 msgstr "ខ្មែរ"
 
-#: .\django_i18n\settings.py:139
+#: .\django_i18n\settings.py:145
 msgid "German"
 msgstr "អាឡឺម៉ង់"
 
-#: .\django_i18n\settings.py:140
+#: .\django_i18n\settings.py:146
 msgid "Russian"
 msgstr "រុស្ស៊ី"

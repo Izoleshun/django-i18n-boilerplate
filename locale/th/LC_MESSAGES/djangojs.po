@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 03:39+0700\n"
-"PO-Revision-Date: 2024-11-07 22:07+0000\n"
+"POT-Creation-Date: 2024-11-09 02:56+0700\n"
+"PO-Revision-Date: 2024-11-09 03:00+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,6 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: .\django_i18n\static\js\datatables.min.js:3622
+#: .\django_i18n\static\js\script.js:171
+msgid "First"
+msgstr "หน้าแรก"
+
+#: .\django_i18n\static\js\datatables.min.js:3623
+#: .\django_i18n\static\js\script.js:172
+msgid "Last"
+msgstr "หน้าสุดท้าย"
+
+#: .\django_i18n\static\js\datatables.min.js:3624
+#: .\django_i18n\static\js\script.js:173
+msgid "Next"
+msgstr "ถัดไป"
+
+#: .\django_i18n\static\js\datatables.min.js:3625
+#: .\django_i18n\static\js\script.js:174
+msgid "Previous"
+msgstr "ก่อนหน้า"
+
+#: .\django_i18n\static\js\datatables.min.js:3627
+#: .\django_i18n\static\js\script.js:158
+msgid "No data available in table"
+msgstr "ไม่มีข้อมูลในตาราง"
 
 #: .\django_i18n\static\js\script.js:4
 msgid "This is text1 from script.js"
@@ -42,3 +67,55 @@ msgstr "นี่คือ text5 จาก script.js"
 #: .\django_i18n\static\js\script.js:9
 msgid "This is text6 from script.js"
 msgstr "นี่คือ text6 จาก script.js"
+
+#: .\django_i18n\static\js\script.js:159
+msgid "No entries to show"
+msgstr "ไม่มีแถวในการแสดง"
+
+#: .\django_i18n\static\js\script.js:160
+msgid "No records to display"
+msgstr "ไม่มีแถวในการแสดง"
+
+#: .\django_i18n\static\js\script.js:161
+msgid "Please wait - loading..."
+msgstr "กรุณารอซักครู่"
+
+#: .\django_i18n\static\js\script.js:165
+#| msgid "Showing"
+msgid "Showing "
+msgstr "แสดงแถวที่ "
+
+#: .\django_i18n\static\js\script.js:165
+msgid "to"
+msgstr "ถึง"
+
+#: .\django_i18n\static\js\script.js:165
+msgid "of"
+msgstr "จาก "
+
+#: .\django_i18n\static\js\script.js:165 .\django_i18n\static\js\script.js:168
+msgid "entries"
+msgstr "แถว"
+
+#: .\django_i18n\static\js\script.js:166
+msgid "from "
+msgstr "จาก "
+
+#: .\django_i18n\static\js\script.js:166
+#| msgid "total entries"
+msgid "total entries"
+msgstr " จำนวนแถวทั้งหมด"
+
+#: .\django_i18n\static\js\script.js:168
+msgid "Show"
+msgstr "จำนวน"
+
+#: .\django_i18n\static\js\script.js:179
+msgid "Search"
+msgstr "ค้นหา"
+
+#~ msgid "filtered from"
+#~ msgstr "คัดกรองจาก"
+
+#~ msgid "No matching records found"
+#~ msgstr "ค้นหาข้อมูลไม่พบ"

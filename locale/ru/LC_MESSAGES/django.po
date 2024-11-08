@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-08 03:39+0700\n"
-"PO-Revision-Date: 2024-11-08 03:42+0000\n"
+"POT-Creation-Date: 2024-11-09 02:06+0700\n"
+"PO-Revision-Date: 2024-11-09 02:11+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,42 +19,70 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
-#: .\app_test\templates\index.html:54
+#: .\app_test\templates\index.html:21
+msgid "Django i18n"
+msgstr "Интернационализация Django"
+
+#: .\app_test\templates\index.html:21
+msgid "Language switcher"
+msgstr "Переключатель языка"
+
+#: .\app_test\templates\index.html:58
 msgid "Hello World 1 from html"
 msgstr "Привет, мир 1 из HTML"
 
-#: .\app_test\templates\index.html:55
-msgid "Hello World 2 from html"
-msgstr "Привет, мир 2 из HTML"
+#: .\app_test\views.py:16
+msgid "id"
+msgstr "id"
 
-#: .\app_test\templates\index.html:56
-msgid "Hello World 3 from html"
-msgstr "Привет, мир 3 из HTML"
+#: .\app_test\views.py:16
+msgid "name"
+msgstr "имя"
 
-#: .\app_test\views.py:11
+#: .\app_test\views.py:16
+msgid "age"
+msgstr "возраст"
+
+#: .\app_test\views.py:16
+msgid "email"
+msgstr "электронная почта"
+
+#: .\app_test\views.py:16
+msgid "phone"
+msgstr "телефон"
+
+#: .\app_test\views.py:16
+msgid "address"
+msgstr "адрес"
+
+#: .\app_test\views.py:16
+msgid "description"
+msgstr "описание"
+
+#: .\app_test\views.py:18
 msgid "Welcome to our website! from view.py"
 msgstr "Добро пожаловать на наш сайт! из view.py"
 
-#: .\app_test\views.py:12
+#: .\app_test\views.py:19
 msgid "Please enjoy browsing our products. from view.py"
 msgstr "Пожалуйста, наслаждайтесь просмотром "
 
-#: .\django_i18n\settings.py:136
+#: .\django_i18n\settings.py:142
 msgid "English"
 msgstr "Английский"
 
-#: .\django_i18n\settings.py:137
+#: .\django_i18n\settings.py:143
 msgid "Thai"
 msgstr "Тайский"
 
-#: .\django_i18n\settings.py:138
+#: .\django_i18n\settings.py:144
 msgid "Khmer"
 msgstr "Кхмерский"
 
-#: .\django_i18n\settings.py:139
+#: .\django_i18n\settings.py:145
 msgid "German"
 msgstr "Немецкий"
 
-#: .\django_i18n\settings.py:140
+#: .\django_i18n\settings.py:146
 msgid "Russian"
 msgstr "Русский"

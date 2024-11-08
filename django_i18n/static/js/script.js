@@ -150,4 +150,33 @@ $(document).ready(function() {
     TextContentUpdater.initialize();
     LanguageDropdownGenerator.initialize();
     LanguageSwitcher.initialize();
+
+    $('#table_test').dataTable({
+            ordering: false,
+            sorting: false,
+            language: {
+                emptyTable: gettext("No data available in table"),
+                infoEmpty: gettext("No entries to show"),
+                zeroRecords: gettext("No records to display"),
+                loadingRecords: gettext("Please wait - loading..."),
+                processing: "",
+                decimal: ".",
+            thousands: ",",
+            info: gettext("Showing ") + "_START_ " + gettext("to") + " _END_ " + gettext("of") +  " _TOTAL_ " + gettext("entries"),
+            infoFiltered: "(" + gettext("from ") + "_MAX_" + gettext("total entries") + ")",
+            infoPostFix: "",
+            lengthMenu: gettext("Show") + " _MENU_ " + gettext("entries"),
+            search: "",
+            paginate: {
+                first: gettext("First"),
+                last: gettext("Last"),
+                next: gettext("Next"),
+                previous: gettext("Previous"),
+            },
+        }
+    });
+
+    $('.dataTables_filter input').attr("placeholder", gettext("Search"));
+
+    $('#table_test').wrap('<div class="dataTables_scroll" />');
 });

@@ -1,0 +1,144 @@
+table {
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    width: 100% !important;
+}
+
+th {
+    text-align: center !important;
+    font-weight: normal !important;
+    font-size: 0.9rem !important;
+    background-color: var(--table-th-bg-color) !important;
+    color: var(--table-th-font-color) !important;
+    white-space: nowrap !important;
+}
+
+td {
+    text-align: center !important;
+    font-size: 0.8rem !important;
+    padding: 0.75rem !important;
+    border: 0.08rem solid var(--table-th-bg-color) !important;
+    color: var(--table-td-font-color) !important;
+}
+
+tr:nth-child(even) {
+    background-color: var(--table-td-bg-even-color) !important;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--table-td-bg-odd-color) !important;
+}
+
+.dataTables_scroll
+{
+    overflow: auto !important;
+    border-radius: 0.4rem !important;
+    border: 0 !important;
+}
+
+div.dt-buttons {
+    height: 100% !important;
+    padding: 0.5rem 0 !important;
+}
+
+button.dt-button {
+    /* display: block !important; */
+    color: var(--table-btn-font-color) !important;
+    background-color: var(--table-btn-bg-color) !important;
+    border: 0rem !important;
+    border-radius: 0.4rem !important;
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
+    margin: 0.25rem !important;
+    width: 5rem !important;
+    text-align: center !important;
+}
+
+button.dt-button:hover {
+    color: var(--table-btn-font-color-hover) !important;
+    background-color: var(--table-btn-bg-color-hover) !important;
+    font-weight: bolder;
+}
+
+.dataTables_filter input {
+    padding: 1rem;
+    background-size: 1rem !important;
+    background-position: 0.8rem 0.8rem !important;
+    background-repeat: no-repeat !important;
+    max-width: 100% !important;
+    min-width: 5.5rem !important;
+    font-size: 1rem !important;
+}
+
+
+.dataTables_filter {
+    margin: 0rem !important;
+    padding-bottom: 1rem;
+}
+
+.dataTables_length {
+    padding-bottom: 1rem;
+}
+
+.dataTables_filter input,
+.dataTables_length label select {
+    border-radius: 0.3rem !important;
+    border: 0.08rem solid var(--input-border-color) !important;
+    color: var(--input-font-color) !important;
+    background-color: var(--input-bg-color) !important;
+}
+
+.dataTables_filter input:focus,
+.dataTables_length label select:focus {
+    outline: none !important;
+    border: 0.08rem solid var(--input-border-focus-color) !important;
+    box-shadow: 0 0 0.08rem 0.08rem var(--input-border-focus-color) !important;
+    color: var(--input-font-focus-color) !important;
+    background-color: var(--input-bg-focus-color) !important;
+}
+
+.dataTables_length label {
+    font-size: 1rem !important;
+    /* margin: 0 1rem 0.75rem 0 !important; */
+}
+
+.dataTables_info {
+    font-size: 1rem !important;
+    margin: 0rem !important;
+    padding: 1.2rem 0rem !important;
+    
+}
+
+.dataTables_paginate {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem !important;
+    margin: 0rem !important;
+    padding: 0.6rem 0rem !important;
+}
+
+.dataTables_paginate a {
+    color: #303030 !important;
+    border: 0rem !important;
+}
+
+a.current,
+.paginate_button:hover {
+    border-radius: 0.6rem !important;
+    background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%) !important;
+    border: 0rem solid var(--table-btn-bg-color-hover) !important;
+    background-color: var(--table-btn-bg-color-hover) !important;
+    color: var(--table-btn-font-color-hover) !important;
+}
+
+.dataTables_paginate a.disabled {
+    color: #606060 !important;
+}
+
+.dataTables_paginate a.disabled:hover {
+    border-radius: 0.6rem !important;
+    background: none !important;
+    border: 0rem solid #ffffff !important;
+    background-color: #ffffff !important;
+    color: #606060 !important; 
+}
