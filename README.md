@@ -263,7 +263,7 @@ if 'rosetta' in settings.INSTALLED_APPS:
 
 ---
 
-### Part 4: HTML Template Setup
+### Part 3: HTML Template Setup
 
 In your HTML templates, ensure you load the necessary tags and set the language attribute dynamically:
 
@@ -298,7 +298,7 @@ In your HTML templates, ensure you load the necessary tags and set the language 
 
 ---
 
-### Part 5: How to Send Data for Redirecting to a New Path (Change Language)
+### Part 4: How to Send Data for Redirecting to a New Path (Change Language)
 
 To change the language and redirect users to the appropriate path, use the following JavaScript module:
 
@@ -344,7 +344,7 @@ var LanguageSwitcher = (function($) {
 
 This setup allows users to switch languages seamlessly, updating both the server-side language setting and the URL path.
 
-### Part 6: Translating Text in Your Django Project
+### Part 5: Translating Text in Your Django Project
 
 #### 1. Django Templates
 
@@ -390,7 +390,7 @@ def index(request):
 
 This setup ensures that your application can handle translations across different parts of your project, providing a consistent multilingual experience.
 
-### Part 7: Handling Translation Files
+### Part 6: Handling Translation Files
 
 To manage translations in your Django project, follow these steps:
 
