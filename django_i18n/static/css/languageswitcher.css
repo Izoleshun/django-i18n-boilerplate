@@ -31,9 +31,9 @@ h1, p {
 span {
   display: inline-block;
   width: max-content;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  word-wrap: nowrap;
 }
 
 .hidden {

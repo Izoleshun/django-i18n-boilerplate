@@ -30,10 +30,13 @@ var TextContentUpdater = (function($) {
 
 // Module for handling language changes
 var LanguageSwitcher = (function($) {
-    function switchLanguage(languageCode, csrfToken) {
+    function switchLanguage(languageCode, csrfToken, redirectTo) {
         const requestData = new FormData();
         requestData.append('csrfmiddlewaretoken', csrfToken);
         requestData.append('language', languageCode);
+
+        const currentPath = window.location.pathname;
+        const newPath = currentPath.replace(/^\/[a-z]{2}(-[A-Z]{2})?/, `/${languageCode}`);
 
         $.ajax({
             type: 'POST',
@@ -41,7 +44,7 @@ var LanguageSwitcher = (function($) {
             data: requestData,
             processData: false,
             contentType: false,
-            success: () => window.location.href = '/',
+            success: () => window.location.href = newPath,
             error: (xhr, status, error) => console.error('Error changing language:', error)
         });
     }
@@ -51,7 +54,11 @@ var LanguageSwitcher = (function($) {
             event.preventDefault();
             const languageCode = $(this).data('lang-code');
             const csrfToken = $('#embed-data').data('csrf');
-            switchLanguage(languageCode, csrfToken);
+            const redirectTo = $('#list_dropdown_lang').data('url-redirect-to');
+
+            console.log(languageCode, csrfToken, redirectTo);
+
+            switchLanguage(languageCode, csrfToken, redirectTo);
         });
     }
 
@@ -95,7 +102,7 @@ var LanguageDropdownGenerator = (function($) {
     }
 
     function createActiveLanguageButton(activeLanguageInfo) {
-        const languageText = gettext(activeLanguageInfo.name_local);
+        const languageText = gettext(activeLanguageInfo.name_translated);
         const $button = $('<button></button>', {
             id: 'btn_change_lang',
             html: `
