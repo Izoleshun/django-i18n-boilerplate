@@ -1,6 +1,18 @@
 # django-i18n-boilerplate
 A Django starter template for quick multilingual app setup, featuring built-in translation, language switching.
 
+## Table of Contents
+1. [Prerequisites](#prerequisites)
+2. [Installation](#installation)
+3. [Configuration](#configuration)
+   - [Part 0: Folder Structure](#part-0-folder-structure)
+   - [Part 1: `settings.py`](#part-1-settingspy)
+   - [Part 2: `urls.py`](#part-2-urlspy)
+   - [Part 3: HTML Template Setup](#part-3-html-template-setup)
+    - [Part 4: How to Send Data for Redirecting to a New Path (Change Language)](#part-4-how-to-send-data-for-redirecting-to-a-new-path-change-language)
+    - [Part 5: Translating Text in Your Django Project](#part-5-translating-text-in-your-django-project)
+    - [Part 6: Handling Translation Files](#part-6-handling-translation-files)
+
 ## Prerequisites
 
 - **python 3.8x**: Core language for the project.
@@ -251,7 +263,7 @@ if 'rosetta' in settings.INSTALLED_APPS:
     # Conditionally includes Rosetta URLs if 'rosetta' is in INSTALLED_APPS.
 ```
 
-### Explanation
+#### Explanation
 
 - **Admin URL**: Access Django's admin for management.
 - **i18n URL**: Enable language switching for users.
@@ -263,7 +275,7 @@ if 'rosetta' in settings.INSTALLED_APPS:
 
 ---
 
-### Part 4: HTML Template Setup
+### Part 3: HTML Template Setup
 
 In your HTML templates, ensure you load the necessary tags and set the language attribute dynamically:
 
@@ -289,7 +301,7 @@ In your HTML templates, ensure you load the necessary tags and set the language 
 </head>
 ```
 
-### Explanation
+#### Explanation
 
 - **Load Tags**: `{% load static %}` and `{% load i18n %}` are used to enable static file handling and internationalization.
 - **Language Attribute**: `lang="{{ CURRENT_LANGUAGE }}"` sets the HTML language attribute dynamically.
@@ -298,7 +310,7 @@ In your HTML templates, ensure you load the necessary tags and set the language 
 
 ---
 
-### Part 5: How to Send Data for Redirecting to a New Path (Change Language)
+### Part 4: How to Send Data for Redirecting to a New Path (Change Language)
 
 To change the language and redirect users to the appropriate path, use the following JavaScript module:
 
@@ -344,7 +356,7 @@ var LanguageSwitcher = (function($) {
 
 This setup allows users to switch languages seamlessly, updating both the server-side language setting and the URL path.
 
-### Part 6: Translating Text in Your Django Project
+### Part 5: Translating Text in Your Django Project
 
 #### 1. Django Templates
 
@@ -382,7 +394,7 @@ def index(request):
     instructions = _("Please enjoy browsing our products. from view.py")
 ```
 
-### Summary
+#### Summary
 
 - **Django Templates**: Use `{% trans "text" %}` for translating static text.
 - **JavaScript**: Use `gettext("text")` for translating text in scripts.
@@ -390,7 +402,9 @@ def index(request):
 
 This setup ensures that your application can handle translations across different parts of your project, providing a consistent multilingual experience.
 
-### Part 7: Handling Translation Files
+---
+
+### Part 6: Handling Translation Files
 
 To manage translations in your Django project, follow these steps:
 
