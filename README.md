@@ -10,6 +10,18 @@ A Django starter template for quick multilingual app setup, featuring built-in t
 - **django-rosetta 0.10.1**: Web interface for translation files.
 - **gettext 0.22.5a & iconv 1.17**: Required for handling translations.
 
+1. [Introduction](#django-i18n-boilerplate)
+2. [Prerequisites](#prerequisites)
+3. [Installation](#installation)
+4. [Configuration](#configuration)
+   - [Part 0: Folder Structure](#part-0-folder-structure)
+   - [Part 1: `settings.py`](#part-1-settingspy)
+   - [Part 2: `urls.py`](#part-2-urlspy)
+   - [Part 3: HTML Template Setup](#part-3-html-template-setup)
+    - [Part 4: How to Send Data for Redirecting to a New Path (Change Language)](#part-4-how-to-send-data-for-redirecting-to-a-new-path-change-language)
+    - [Part 5: Translating Text in Your Django Project](#part-5-translating-text-in-your-django-project)
+    - [Part 6: Handling Translation Files](#part-6-handling-translation-files)
+
 ## Installation
 
 Assuming you have already built your Django application, follow these steps to set up your environment:
@@ -251,7 +263,7 @@ if 'rosetta' in settings.INSTALLED_APPS:
     # Conditionally includes Rosetta URLs if 'rosetta' is in INSTALLED_APPS.
 ```
 
-### Explanation
+#### Explanation
 
 - **Admin URL**: Access Django's admin for management.
 - **i18n URL**: Enable language switching for users.
@@ -289,7 +301,7 @@ In your HTML templates, ensure you load the necessary tags and set the language 
 </head>
 ```
 
-### Explanation
+#### Explanation
 
 - **Load Tags**: `{% load static %}` and `{% load i18n %}` are used to enable static file handling and internationalization.
 - **Language Attribute**: `lang="{{ CURRENT_LANGUAGE }}"` sets the HTML language attribute dynamically.
@@ -382,7 +394,7 @@ def index(request):
     instructions = _("Please enjoy browsing our products. from view.py")
 ```
 
-### Summary
+#### Summary
 
 - **Django Templates**: Use `{% trans "text" %}` for translating static text.
 - **JavaScript**: Use `gettext("text")` for translating text in scripts.
