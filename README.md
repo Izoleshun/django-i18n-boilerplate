@@ -1,6 +1,18 @@
 # django-i18n-boilerplate
 A Django starter template for quick multilingual app setup, featuring built-in translation, language switching.
 
+## Table of Contents
+1. [Prerequisites](#prerequisites)
+2. [Installation](#installation)
+3. [Configuration](#configuration)
+   - [Part 0: Folder Structure](#part-0-folder-structure)
+   - [Part 1: `settings.py`](#part-1-settingspy)
+   - [Part 2: `urls.py`](#part-2-urlspy)
+   - [Part 3: HTML Template Setup](#part-3-html-template-setup)
+    - [Part 4: How to Send Data for Redirecting to a New Path (Change Language)](#part-4-how-to-send-data-for-redirecting-to-a-new-path-change-language)
+    - [Part 5: Translating Text in Your Django Project](#part-5-translating-text-in-your-django-project)
+    - [Part 6: Handling Translation Files](#part-6-handling-translation-files)
+
 ## Prerequisites
 
 - **python 3.8x**: Core language for the project.
@@ -9,18 +21,6 @@ A Django starter template for quick multilingual app setup, featuring built-in t
 - **django-statici18n 2.5.0**: Manages JavaScript translations.
 - **django-rosetta 0.10.1**: Web interface for translation files.
 - **gettext 0.22.5a & iconv 1.17**: Required for handling translations.
-
-1. [Introduction](#django-i18n-boilerplate)
-2. [Prerequisites](#prerequisites)
-3. [Installation](#installation)
-4. [Configuration](#configuration)
-   - [Part 0: Folder Structure](#part-0-folder-structure)
-   - [Part 1: `settings.py`](#part-1-settingspy)
-   - [Part 2: `urls.py`](#part-2-urlspy)
-   - [Part 3: HTML Template Setup](#part-3-html-template-setup)
-    - [Part 4: How to Send Data for Redirecting to a New Path (Change Language)](#part-4-how-to-send-data-for-redirecting-to-a-new-path-change-language)
-    - [Part 5: Translating Text in Your Django Project](#part-5-translating-text-in-your-django-project)
-    - [Part 6: Handling Translation Files](#part-6-handling-translation-files)
 
 ## Installation
 
@@ -401,6 +401,8 @@ def index(request):
 - **Python Views**: Use `_('text')` for translating text in views.
 
 This setup ensures that your application can handle translations across different parts of your project, providing a consistent multilingual experience.
+
+---
 
 ### Part 6: Handling Translation Files
 
