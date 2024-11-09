@@ -20,6 +20,7 @@ A Django starter template for quick multilingual app setup, featuring built-in t
 - **django 4.2.16**: Web framework for building the application.
 - **django-statici18n 2.5.0**: Manages JavaScript translations.
 - **django-rosetta 0.10.1**: Web interface for translation files.
+- **django-modeltranslation 0.19.10**: Django app for model translation.
 - **gettext 0.22.5a & iconv 1.17**: Required for handling translations.
 
 ## Installation
@@ -69,6 +70,9 @@ root/
 |   |── migrations/
 |   |── templates/
 |   └── ...
+|   |── admin.py
+|   |── models.py
+|   |── translation.py
 |   |── urls.py
 |   |── views.py
 |   └── ...
@@ -112,6 +116,9 @@ Ensure your app and additional apps are installed in `INSTALLED_APPS`:
 
 ```python
 INSTALLED_APPS = [
+    'modeltranslation', # always place before django.contrib.admin
+    'django.contrib.admin',
+    ...,
     # Your other apps
     'app_name',  # Make sure your app is listed here
     'rosetta',  # Provides a web interface for editing translation files
@@ -121,6 +128,8 @@ INSTALLED_APPS = [
 ```
 
 **Explanation**: Adding your app and additional apps like `rosetta` and `django_statici18n` to `INSTALLED_APPS` ensures Django loads them, enabling their functionalities such as translation management and web interfaces for editing translations.
+
+**Note**: `modeltranslation` must be placed before `django.contrib.admin` in the list.
 
 #### Step 2: Update Middleware
 
@@ -220,6 +229,17 @@ STATICI18N_OUTPUT_DIR = 'jsi18n'
 - `LANGUAGES`: Defines the languages your application supports, allowing users to switch between them.
 - `STATICI18N_ROOT`: The root directory for static i18n files.
 - `STATICI18N_OUTPUT_DIR`: The directory where JavaScript translation files are output, enabling client-side translations.
+
+### Step 7: Define Model Translation Settings
+
+```python
+MODELTRANSLATION_LANGUAGES = ('en', 'th', 'km', 'de', 'ru')
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+```
+
+**Explanation**:
+- `MODELTRANSLATION_LANGUAGES`: Defines the languages of model in your app, allowing users to switch between them.
+- `MODELTRANSLATION_DEFAULT_LANGUAGE`: Sets the default language for your model translation.
 
 ---
 
@@ -394,13 +414,74 @@ def index(request):
     instructions = _("Please enjoy browsing our products. from view.py")
 ```
 
-#### Summary
+#### 4. Model Translation
 
-- **Django Templates**: Use `{% trans "text" %}` for translating static text.
-- **JavaScript**: Use `gettext("text")` for translating text in scripts.
-- **Python Views**: Use `_('text')` for translating text in views.
+#### Step 1: Create model
 
-This setup ensures that your application can handle translations across different parts of your project, providing a consistent multilingual experience.
+let us say we have a model called `TestModel` in `app_name` app.
+```python
+from django.db import models
+
+# Create your models here.
+class TestModel(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    age = models.IntegerField()
+    email = models.EmailField(max_length=100)
+    phone = models.CharField(max_length=15)
+    address = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+```
+
+#### Step 2: create `translation.py` in your app
+
+```python
+from modeltranslation.translator import (
+    translator,
+    register,
+    TranslationOptions,
+)
+from .views import get_translated_fields
+from .models import TestModel
+
+class TestModelTranslationOptions(TranslationOptions):
+    translation_fields = get_translated_fields()['translation_fields'] ### ('name', 'address', 'description']
+    fields = tuple(translation_fields) ### fields = ('name', 'address', 'description')
+
+translator.register(TestModel, TestModelTranslationOptions)
+```
+
+**Explanation**:
+- **Fields**: Ensure that `fields` is a tuple of field names in the model that you want to translate. For example, if your model `TestModel` has fields like `name`, `description`, and `address`, you might define `fields` as `('name', 'description', 'address')`.
+
+##### **Caution**
+Be careful! fields that are primary keys or auto-generated, such as `id`, cannot be translated. Only include fields that are suitable for translation, like `name`, `description`, etc. **Each field listed must exist in your model.**
+
+#### Step 3: Register the model in `admin.py`
+
+```python
+from modeltranslation.admin import TranslationAdmin
+from .models import TestModel
+
+class TestModelAdmin(TranslationAdmin):
+    pass
+
+admin.site.register(TestModel, TestModelAdmin)
+```
+
+***Explanation***:
+- `TranslationAdmin`: This is a custom admin class that allows you to register models with translation support.
+- `pass`: This is a placeholder for the class body, indicating that no additional functionality is needed for the admin class.
+
+#### Step 4: Sync with database
+
+```bash
+python manage.py makemigrations app_name
+python manage.py migrate app_name
+```
 
 ---
 
